@@ -38,9 +38,10 @@ body {
 .result {
     width: 100%;
     border-radius: 0 0 2rem 2rem;
-    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    background-image: linear-gradient(var(--color-lightSlateBlue), var(--color-lightRoyalBlue));
     color: var(--color-white);
-
+    box-shadow: 0 2px 30px var(--color-lightSlateBlue);
+    z-index: 1;
 }
 
 .result-title {
@@ -211,46 +212,49 @@ button:focus {
 }
 
 
-/*SMALL SCREEN*/
-/* @media (max-width: 768px) {
+
+@media (min-width: 768px) {
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .flexbox-row {
+        display: flex;
+        flex-direction: row;
+        max-width: 600px;
+        max-height: 400px;
+        background-color: var(--color-white);
+        border-radius: 2rem;
+    }
 
     .result {
-        position: absolute;
-        top: -10px;
-        left: 0;
-        min-width: 100vw;
-        border-bottom-left-radius: 40px !important;
-        border-bottom-right-radius: 40px !important;
+        height: 100%;
+        border-radius: 2rem;
+        box-shadow: none;
+        z-index: 1;
     }
 
-    .circle {
-        position: relative;
-        bottom: 30px !important;
-        transform: scale(.9);
+    .result-text {
+        width: 75%;
+        text-align: center;
     }
 
-    .circle p {
-        position: relative;
-        bottom: 15px;
-    }
-
-    .result h4 {
-        position: relative;
-        bottom: 40px;
-    }
-
-    .result>p {
-        position: relative;
-        bottom: 50px;
-        font-size: 1.28em !important;
+    .message {
+        font-size: 0.9rem;
     }
 
     .summary {
-        position: absolute;
-        left: 0;
-        top: 45%;
-        min-width: 100vw;
+        padding: 1rem;
+        width: 50%;
+        height: 100%;
+        background-color: transparent;
     }
-} */
 
-/*END SMALL SCREEN*/
+    .category-item {
+        font-size: 0.5rem;
+    }
+}
